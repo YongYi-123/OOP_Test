@@ -7,7 +7,7 @@
 const double pi = 3.142;
 
 double Cylinder :: SurfaceArea(){
-    double circle = radius * radius * pi * 2;
+    double circle = radius * radius * pi * 2.0;
     double rectangle = 2.0 * radius * pi * height;
     return (circle + rectangle);
 }
@@ -18,7 +18,7 @@ double Cylinder :: Volume(){
 }
 
 double Cylinder :: Circumference(){
-    double cir = radius * pi * 2.0 * 2.0;
+    double cir = radius * pi * 2.0;
     return cir;
 }
 
