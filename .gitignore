@@ -1,0 +1,9 @@
+# Object files
+*.o
+
+# Executable file
+Lab07
+
+# Object directory
+obj/
+
