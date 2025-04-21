@@ -3,23 +3,21 @@
 
 # include "Cylinder.h"
 # include <iomanip>
+# include <cmath>
+using namespace std;
 
-const double pi = 3.142;
+const double pi = M_PI;
 
 double Cylinder :: SurfaceArea(){
-    double circle = radius * radius * pi * 2.0;
-    double rectangle = 2.00 * radius * pi * height;
-    return (circle + rectangle);
+    return pi * 2.00 * radius * (radius + height);
 }
 
 double Cylinder :: Volume(){
-    double volume = radius * radius * pi * height;
-    return volume;
+    return pi * radius * radius * height;
 }
 
 double Cylinder :: Circumference(){
-    double cir = radius * pi * 2.00;
-    return cir;
+    return pi * radius * 2.00;
 }
 
 istream & operator>>(istream & in, Cylinder & cldr)
@@ -30,10 +28,9 @@ istream & operator>>(istream & in, Cylinder & cldr)
 
 ostream & operator<<(ostream & out, Cylinder & cldr)
 {
-    out << std::fixed << std::setprecision(3);
-    out << "Circumference: " << cldr.Circumference() << endl;
-    out << "SurfaceArea: " << cldr.SurfaceArea() << endl;
-    out << "Volume: " << cldr.Volume() << endl;
+    out << "Circumference: " << fixed << setprecision(3) << cldr.Circumference() << endl;
+    out << "SurfaceArea: " << fixed << setprecision(3) << cldr.SurfaceArea() << endl;
+    out << "Volume: " << fixed << setprecision(3) << cldr.Volume() << endl;
     return out;
 }
 
